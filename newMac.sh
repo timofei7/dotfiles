@@ -11,7 +11,7 @@ fi
 ruby <(curl -fsSkL raw.github.com/mxcl/homebrew/go)
 
 
-brew install mobile-shell wget python ruby git zsh zsh-completions zsh-lovers gawk gnu-sed htop-osx iftop sl vim
+brew install thefuck mobile-shell wget python ruby git zsh zsh-completions zsh-lovers gawk gnu-sed htop-osx iftop sl vim
 
 brew tap caskroom/versions
 
@@ -20,6 +20,10 @@ brew cask install atom-beta
 
 chmod a+x ./macos
 ./macos
+
+# run dotsetup symlinking
+chmod a+x ./dotSetup.#!/bin/sh
+./dotSetup.sh ${HOME}/dotfiles
 
 echo remember to also:
 echo    install iterm2, app store stuff, etc

@@ -17,7 +17,6 @@ if [ -e $HOME/.oh-my-zsh ]; then
   ZSH=$HOME/.oh-my-zsh
 	ZSH_THEME="awesomepanda"
 	#CASE_SENSITIVE="true"
-	DISABLE_AUTO_UPDATE="true"
 	#DISABLE_LS_COLORS="true"
 	#DISABLE_AUTO_TITLE="true"
 	#COMPLETION_WAITING_DOTS="true"
