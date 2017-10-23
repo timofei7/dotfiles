@@ -1,0 +1,46 @@
+alias top='top -o cpu'
+alias htop='sudo htop'
+alias hist='history|grep '
+alias jettyrun='sbt update jetty-run ~prepare-webapp'
+alias pymol='pymol -M'
+
+#only on cs linux
+if [ `uname` = "Linux" ]; then
+	alias tls\='ls -laFh '
+	alias df\='df -h '
+	alias ls\='ls --color'
+	alias cd2wav='cdda2wav -D 0,4,0 -x -B'
+	alias top='top -c -d .5'
+	alias pss='ps -eo pid,stat,pcpu,nwchan,wchan=WIDE-WCHAN-COLUMN -o args'
+  alias vi="vim"
+  alias vncs="vncserver -geometry 1600x1000 -nohttpd"
+	alias getdu="du -sk .[!.]* *| sort -n | cut -f2 |xargs -d'\n' du -hs $1"
+fi	
+
+
+#os x only
+if [[ `pwd` == *Users/tim* ]];then
+  alias getdu="du -sk .[!.]* * | sort -n | cut -f2 |xargs -I'{}' du -hs '{}'"
+  alias tm="terminal-notifier -message"
+	alias fact="( gtimeout 5s bash -c \"elinks -dump randomfunfacts.com | sed -n '/^| /p' | tr -d \|\" &) 2> /dev/null"
+
+	function pingn(){
+  	ping -o $1 > /dev/null && terminal-notifier -message "$1 is now up" && say "$1 is now up" || terminal-notifier -message "failed to ping $1"
+	}
+
+	alias ugitup='pushd ~/Desktop/csfam_dev/udunnit-common/; git pull --rebase origin master; cd ../udunnit-api; git pull --rebase origin master; cd ../udunnit-frontend; git pull --rebase origin master; popd'
+	alias ugitstat='pushd ~/Desktop/csfam_dev/udunnit-common/; git status; cd ../udunnit-api; git status; cd ../udunnit-frontend; git status; popd'
+	alias usbtup='gitup; pushd ~/Desktop/csfam_dev/udunnit-common/; sbt clean compile; cd ../udunnit-api; sbt clean compile stage; cd ../udunnit-frontend; sbt clean compile stage; popd'
+	alias startmongo='mongod --quiet --fork --logpath=/tmp/mongo.log'
+	#alias brewup="brew update --rebase; brew upgrade"
+	alias brewup="brew update; brew upgrade --all"
+
+  function undo_conflicted() { 
+      find . -name \*conflicted\* -exec bash -c 'ORIG="{}"; NEW=`echo $ORIG | sed -e "s/ (lappy15.*)//"`;  mv "$ORIG" "$NEW"   \; ' 
+  }
+  alias ssh-discourse="ssh -i ~/.ssh/aws-dali-discourse.pem root@54.221.111.2"
+  alias mosh-discourse="mosh --ssh=\"ssh -i ~/.ssh/aws-dali-discourse.pem\" root@54.221.111.2"
+
+fi
+
+alias gg='git log --oneline --abbrev-commit --all --graph --decorate --color'
