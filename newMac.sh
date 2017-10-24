@@ -25,5 +25,7 @@ chmod a+x ./macos
 chmod a+x ./dotSetup.#!/bin/sh
 ./dotSetup.sh ${HOME}/dotfiles
 
+cp -f ${HOME}/dotfiles/init/com.googlecode.iterm2.plist ~/Library/Preferences/com.googlecode.iterm2.plist
+
 echo remember to also:
 echo    install iterm2, app store stuff, etc
