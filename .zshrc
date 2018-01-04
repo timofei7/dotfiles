@@ -130,3 +130,6 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 alias cs52surge="surge /Users/tim/Dropbox/Development/cs52/dartmouth-cs52.github.io.development/_site cs52-dev.surge.sh"
 
 eval "$(thefuck --alias)"
+
+eval "$(rbenv init -)"
+
