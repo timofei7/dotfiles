@@ -133,3 +133,4 @@ eval "$(thefuck --alias)"
 
 eval "$(rbenv init -)"
 
+export PATH="$HOME/.fastlane/bin:$PATH"
