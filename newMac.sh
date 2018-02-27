@@ -17,6 +17,13 @@ brew tap caskroom/versions
 
 brew cask install atom-beta
 
+brew cask install fastlane
+brew cask install insomnia
+brew install awscli
+brew install heroku
+brew install mongo
+
+
 # copy before running macos setup
 cp -f ${HOME}/dotfiles/init/com.googlecode.iterm2.plist ~/Library/Preferences/com.googlecode.iterm2.plist
 
